@@ -1,0 +1,33 @@
+Configuración de parametros de red
+
+sudo nmtui
+nmcli con show
+nmcli con mod "nombre_conexion" ipv4.addresses 
+nmcli con mod "nombre_conexion" ipv4.gateway 
+nmcli con mod "nombre_conexion" ipv4.dns 
+nmcli con mod "nombre_conexion" ipv4.method manual
+nmcli con up "nombre_conexion"
+sudo ifconfig interfaz IP netmask máscara
+sudo dhclient -r interfaz
+sudo dhclient
+
+Gestion de Usuario y grupos
+
+sudo adduser 
+sudo usermod -g sudo user
+sudo groupadd guest 
+sudo adduser 
+sudo usermod -g gust user
+sudo userdel user
+sudo groupel group
+
+Gestion de Permisos de archivos
+
+mkdir materia
+cd materia
+vi estudiante.txt
+chmod 700 estudiante.txt
+cd ..
+mkdir materia2
+cp materia/estudiante.txt materia2/
+rm -r materia
