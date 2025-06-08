@@ -1,0 +1,45 @@
+Practica 1: 
+
+
+sudo apt update && sudo apt upgrade -y
+grep -r ^deb /etc/apt/sources.list /etc/apt/sources.list.d/
+apt-cache policy bashtop
+sudo apt install -y git make
+git clone https://github.com/aristocratos/bashtop.git
+cd bashtop
+sudo make install
+bashtop
+sudo apt purge --auto-remove bashtop
+sudo make uninstall
+rm -rf ~/.config/bashtop
+sudo apt autoremove --purge
+
+Practica 2
+
+
+
+sudo crontab -e
+
+0 23 * * * apt update && apt upgrade -y
+0 3 * * 0 /sbin/shutdown -r now
+
+sudo ls /tmp
+echo "rm -rf /tmp/*" | at now + 1 minute
+sudo ls /tmp
+
+Practica 3  
+
+
+
+lsblk
+sudo fdisk /dev/sdb
+sudo mkfs.ext4 /dev/sdb1
+mkdir -p /root/Escritorio/disco_nuevo
+mount /dev/sdb1 /root/Escritorio/disco_nuevo
+touch /root/Escritorio/disco_nuevo/Adrian.txt
+sudo umount /root/Escritorio/disco_nuevo
+sudo mount /dev/sdb1 /mnt
+ls -l /mnt
+
+
+
